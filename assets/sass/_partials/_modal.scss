@@ -1,0 +1,48 @@
+body.withModal {
+    overflow: hidden;
+}
+.cover-all {
+    pointer-events: none;
+    position: fixed;
+    display: flex;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 20;
+}
+.cover-all.modal-cover {
+    pointer-events: all;
+    opacity: 1;
+}
+.modal-frame {
+    --target-width: 40%;
+    width: var(--target-width);
+    --target-height: 408px;
+    --notchSize: 60px;
+}
+@media (min-width: 576px) {
+    .modal-frame {
+        --target-width: 500px;
+        width: var(--target-width);
+        --target-height: 408px;
+        --notchSize: 60px;
+    }
+}
+.modal-cover > svg {
+    
+}
+.modal-dismiss {
+    height: var(--notchSize);
+    padding: calc((var(--notchSize) - 20px) / 2) 0;
+}
+.modal-dismiss svg {
+    display: block;
+    margin-left: auto;
+    height: 100%;
+}
